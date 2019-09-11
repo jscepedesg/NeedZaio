@@ -1,0 +1,54 @@
+{
+  "name": "Contactinfo_TB",
+  "plural": "Contactinfos_TB",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "UserID": {
+      "type": "number",
+      "required": true
+    },
+    "Address": {
+      "type": "string",
+      "required": true,
+      "default": "w-#N°"
+    },
+    "CountryID": {
+      "type": "number",
+      "required": true
+    },
+    "City": {
+      "type": "string",
+      "required": true
+    },
+    "Phone": {
+      "type": "string",
+      "required": true,
+      "default": "-d"
+    },
+    "CelPhone": {
+      "type": "string",
+      "required": true,
+      "default": "-d"
+    },
+    "EmergencyName": {
+      "type": "string",
+      "required": true
+    },
+    "EmergencyPhone": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

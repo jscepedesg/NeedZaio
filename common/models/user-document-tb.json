@@ -1,0 +1,36 @@
+{
+  "name": "UserDocument_TB",
+  "plural": "UsersDocument_TB",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "UserID": {
+      "type": "number",
+      "required": true
+    },
+    "Document": {
+      "type": "string",
+      "required": true,
+      "default": "w"
+    },
+    "TypeDocumentID": {
+      "type": "number",
+      "required": true
+    },
+    "PlaceExpedition": {
+      "type": "string",
+      "required": true
+    },
+    "DateExpedition": {
+      "type": "date",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

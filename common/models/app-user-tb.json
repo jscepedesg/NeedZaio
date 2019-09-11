@@ -1,0 +1,41 @@
+{
+  "name": "AppUser_TB",
+  "plural": "AppUsers_TB",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "LastName": {
+      "type": "string",
+      "required": true
+    },
+    "Name": {
+      "type": "string",
+      "required": true
+    },
+    "IsMilitar": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "TimeCreate": {
+      "type": "date",
+      "required": true
+    },
+    "isTemporal": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

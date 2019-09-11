@@ -1,0 +1,27 @@
+{
+  "name": "Country_TB",
+  "plural": "Countrys_TB",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number",
+      "required": true
+    },
+    "CountryCode": {
+      "type": "string",
+      "required": true
+    },
+    "CountryName": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
