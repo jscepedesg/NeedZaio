@@ -30,7 +30,24 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "typedocument": {
+      "type": "belongsTo",
+      "model": "TypeDocument_TB",
+      "foreignKey": "TypeDocumentID",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "appUserTb": {
+      "type": "belongsTo",
+      "model": "AppUser_TB",
+      "foreignKey": "UserID",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }

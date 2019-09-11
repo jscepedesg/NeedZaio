@@ -48,7 +48,24 @@
     }
   },
   "validations": [],
-  "relations": {},
+  "relations": {
+    "countryTb": {
+      "type": "belongsTo",
+      "model": "Country_TB",
+      "foreignKey": "CountryID",
+      "options": {
+        "nestRemoting": true
+      }
+    },
+    "appUserTb": {
+      "type": "belongsTo",
+      "model": "AppUser_TB",
+      "foreignKey": "UserID",
+      "options": {
+        "nestRemoting": true
+      }
+    }
+  },
   "acls": [],
   "methods": {}
 }
