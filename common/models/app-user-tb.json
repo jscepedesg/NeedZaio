@@ -36,6 +36,40 @@
   },
   "validations": [],
   "relations": {},
-  "acls": [],
-  "methods": {}
+  "acls": [
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "prototype.registrar_usuario"
+    }
+  ],
+  "methods": {
+    "prototype.registrar_usuario": {
+      "accepts": [
+        {
+          "arg": "data",
+          "type": "object",
+          "required": true,
+          "description": "datos del registro"
+        }
+      ],
+      "returns": [
+        {
+          "arg": "result",
+          "type": "object",
+          "root": true,
+          "description": "datos almacenados"
+        }
+      ],
+      "description": "Permitira registrar los datos basicos del usuario, una identificacion y informacion de contacto.",
+      "http": [
+        {
+          "path": "/registro_usuario",
+          "verb": "post"
+        }
+      ]
+    }
+  }
 }
