@@ -43,9 +43,21 @@
       "principalId": "$everyone",
       "permission": "ALLOW",
       "property": "prototype.registrar_usuario"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
+    },
+    {
+      "accessType": "WRITE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW"
     }
   ],
-  "methods": {
+  "methods":{
     "prototype.registrar_usuario": {
       "accepts": [
         {
