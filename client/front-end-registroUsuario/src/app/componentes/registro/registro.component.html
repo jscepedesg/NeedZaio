@@ -1,0 +1,169 @@
+<br>
+<section id="register" class="mb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+        <div class="card_register">
+          <div class="card">
+            <div class="card-body text-center">
+              <form  #newUser="ngForm" (ngSubmit)="onSubmit(newUser)" >
+                <h1 class="h3 mb-3 font-weight-normal">Registro</h1>
+                <!--apellidos-->
+                <div class="form-group">
+                  <input type="text" id="apellido" name="apellido" class="form-control" placeholder="Apellidos"
+                   [(ngModel)]="new_user.LastName" #apellido= "ngModel" required pattern="[a-zA-Z ]+"/>
+                   <span *ngIf="apellido.touched && !apellido.valid">
+                      El apellido no es valido
+                    </span>
+                </div>
+                <!--nombre-->
+                <div class="form-group">
+                    <input type="text" id="name" name="name" class="form-control" placeholder="Nombre"
+                     [(ngModel)]="new_user.Name" #nombre= "ngModel" required pattern="[a-zA-Z ]+"/>
+                     <span *ngIf="nombre.touched && !nombre.valid">
+                        El Nombre no es valido
+                      </span>
+                </div>
+                <!--username-->
+                <div class="form-group">
+                    <input type="text" id="username" name="username" class="form-control" placeholder="Nombre de usuario"
+                     [(ngModel)]="new_user.username" #username= "ngModel" required pattern="[a-zA-Z0-9]+"/>
+                     <span *ngIf="username.touched && !username.valid">
+                        El nombre de usuario no es valido - no agregue espacios
+                      </span>
+                </div>
+                <!--password-->
+                <div class="form-group">
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Contraseña"
+                    [(ngModel)]="new_user.password" #password= "ngModel" required/>
+                    <span *ngIf="password.touched && !password.valid">
+                        El campo de contraseña no puede estar vacio
+                      </span>
+                </div>
+                <!--email-->
+                <div class="form-group">
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Correo electrónico"
+                     [(ngModel)]="new_user.email" #email= "ngModel" required/>
+                     <span *ngIf="email.touched && !email.valid" >
+                        El correo esta incorrecto debe tener @ & .
+                      </span>
+                </div>
+                <!--IsMilitar-->
+                <div class="checkbox mb-3">
+                    <label>
+                        <input type="checkbox" id="isMilitar" name="isMilitar" [(ngModel)]="new_user.IsMilitar"/> ¿Es militar?
+                    </label>
+                    --
+                    <label>
+                        <input type="checkbox" id="isTemporal" name="isTemporal" [(ngModel)]="new_user.isTemporal"/> ¿Es temporal?
+                    </label>
+                </div>
+                <h1 class="h3 mb-3 font-weight-normal">Documento</h1>
+                <!--Tipo Documento-->
+                <div class="form-group">
+                    Tipo de documento:
+                      <select name="miSelect" id="miSelect" [(ngModel)]="new_document.TypeDocumentID">
+                          <option value=1  selected>CC
+                          <option value=2>TI
+                          <option value=3>TP
+                          <option value=4>RC
+                          <option value=5>CE
+                      </select>
+                  </div>
+                <!--Documento-->
+                <div class="form-group">
+                    <input type="text" id="documento" name="documento" class="form-control" placeholder="Numero de documento"
+                     [(ngModel)]="new_document.Document" #documento= "ngModel" required pattern="[0-9]+"/>
+                     <span *ngIf="documento.touched && !documento.valid">
+                        El documento no es valido
+                      </span>
+                </div>
+                <!--Lugar de expedicion-->
+                <div class="form-group">
+                    <input type="text" id="expedition" name="expedition" class="form-control" placeholder="Lugar de expedición"
+                     [(ngModel)]="new_document.PlaceExpedition" #expedition= "ngModel" required pattern="[a-zA-Z, ]+"/>
+                     <span *ngIf="expedition.touched && !expedition.valid">
+                        El lugar de expedición no es valido
+                      </span>
+                </div>
+                <!--fecha de expedicion-->
+                <div class="form-group">
+                    <input type="date" id="dateexpedition" name="dateexpedition" class="form-control"
+                     [(ngModel)]="new_document.DateExpedition" #dateexpedition= "ngModel" required/>
+                     <span *ngIf="dateexpedition.touched && !dateexpedition.valid">
+                        La fecha de expedición no es valida
+                      </span>
+                </div>
+                <h1 class="h3 mb-3 font-weight-normal">Información de contacto</h1>
+                <!--Tipo pais-->
+                <div class="form-group">
+                    País:
+                      <select name="miSelectPais" id="miSelectPais" [(ngModel)]="new_contactInfo.CountryID">
+                          <option value=1  selected>Colombia
+                          <option value=2>Argentina
+                          <option value=3>Ecuador
+                          <option value=4>Venezuela
+                          <option value=5>Mexico
+                      </select>
+                  </div>
+                  <!--Ciudad-->
+                <div class="form-group">
+                    <input type="text" id="city" name="city" class="form-control" placeholder="Ciudad"
+                     [(ngModel)]="new_contactInfo.City" #city= "ngModel" required/>
+                     <span *ngIf="city.touched && !city.valid">
+                        La ciudad no es valida
+                      </span>
+                </div>
+                <!--Dirrecion-->
+                <div class="form-group">
+                    <input type="text" id="address" name="address" class="form-control" placeholder="Dirección"
+                     [(ngModel)]="new_contactInfo.Address" #address= "ngModel" required/>
+                     <span *ngIf="address.touched && !address.valid">
+                        La dirección no es valida
+                      </span>
+                </div>
+                <!--Celular Movil-->
+                <div class="form-group">
+                    <input type="text" id="phone" name="phone" class="form-control" placeholder="Celular"
+                     [(ngModel)]="new_contactInfo.Phone" #phone= "ngModel" required pattern="[0-9]+"/>
+                     <span *ngIf="phone.touched && !phone.valid">
+                        El celular no es valido
+                      </span>
+                </div>
+                <!--Telefono fijo-->
+                <div class="form-group">
+                    <input type="text" id="celPhone" name="celPhone" class="form-control" placeholder="Telefono"
+                     [(ngModel)]="new_contactInfo.CelPhone" #celPhone= "ngModel" required pattern="[0-9]+"/>
+                     <span *ngIf="celPhone.touched && !celPhone.valid">
+                        El telefono no es valido
+                      </span>
+                </div>
+                <!--Nombre de emergencia-->
+                <div class="form-group">
+                    <input type="text" id="emergencyName" name="emergencyName" class="form-control" placeholder="Nombre de emergencia"
+                     [(ngModel)]="new_contactInfo.EmergencyName" #emergencyName= "ngModel" required pattern="[a-zA-Z ]+"/>
+                     <span *ngIf="emergencyName.touched && !emergencyName.valid">
+                        El nombre de emergencia no es valido
+                      </span>
+                </div>
+                <!--Celular de emergencia-->
+                <div class="form-group">
+                    <input type="text" id="emergencyPhone" name="emergencyPhone" class="form-control" placeholder="Numero de emergencia"
+                     [(ngModel)]="new_contactInfo.EmergencyPhone" #emergencyPhone= "ngModel" required pattern="[0-9]+"/>
+                     <span *ngIf="emergencyPhone.touched && !emergencyPhone.valid">
+                        El numero de emergencia no es valido
+                      </span>
+                </div>
+                <!--Boton-->
+                <button type="submit" class="btn btn-lg bg-dark letracolor" [disabled] ="!newUser.form.valid" >Registrar</button>
+                <div class="form-group">
+                  <a [routerLink]="['/home']" class="form-control login-user">¿Tienes una cuenta?</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

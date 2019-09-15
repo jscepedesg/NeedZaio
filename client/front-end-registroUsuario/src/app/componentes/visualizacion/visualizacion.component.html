@@ -1,0 +1,9 @@
+<br>
+<h4>{{'Bienvenido '+nombre}}</h4>
+<p>Usuarios registrados</p>
+
+  <ul>
+    <li *ngFor= "let usuario of usuarios">
+      {{usuario.id + ' - Nombre: '+usuario.name+ '  '+usuario.lastName+' - Correo: '+usuario.email+' - Nombre de usuario: '+usuario.username}}
+    </li>
+  </ul>
