@@ -72,9 +72,18 @@ export class RegistroComponent implements OnInit {
         form.reset();
       },
       error => {
-        console.log(error);
 
-        alert("Error, Datos invalidos");
+        console.log(error);
+        if(error.status===422)
+        {
+          alert("Ya hay un usuario registrado con el mismo correo o contraseña");
+          form.reset();
+        }
+        else
+        {
+          alert("Error, Datos invalidos");
+          form.reset();
+        }
       }
     );
   }

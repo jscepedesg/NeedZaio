@@ -42,8 +42,16 @@ export class HomeComponent implements OnInit {
       },
       error => {
         console.log(error);
-
-        alert("Error, Datos invalidos");
+        if(error.status===401)
+        {
+          alert("Acceso no autorizado");
+          login.reset();
+        }
+        else
+        {
+          alert("Error, Datos invalidos");
+          login.reset();
+        }
       }
     );
   }

@@ -10,11 +10,12 @@ import { Page404Component } from './componentes/page404/page404.component';
 
 //Importar guards
 import {AuthGuard} from './guards/auth.guard';
+import {LogoutGuard} from './guards/logout.guard';
 
 //Array de rutas
 const appRoutes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'home', component: HomeComponent},
+  { path: 'home', component: HomeComponent, canActivate: [LogoutGuard]},
   { path: 'registro',component: RegistroComponent},
   { path: 'visualizacion',component: VisualizacionComponent, canActivate: [AuthGuard]},//Solo usuarios autenticados
   {path: '**',component: Page404Component}
